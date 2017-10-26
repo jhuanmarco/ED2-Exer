@@ -71,13 +71,14 @@ void printaAlunos(){
 void main(){
 	FILE *arquivo = NULL;
 	ALUNO novo;
-	int opt, check = 0;
+	int check = 0, option;
 	
-	printf("MENU\n1 - Criar arquivo\n2 - Inserir dados\n3 - Listar todos os dados\n4 - Listar aprovados\n5 - Listar reprovados\n6 - Listar alunos e dados\n7 - Listar alunos com nota acima de...\n0 - Sair");
-	scanf(" %d", &opt);
 	
 	do{	
-		switch(opt){
+		printf("MENU\n1 - Criar arquivo\n2 - Inserir dados\n3 - Listar todos os dados\n4 - Listar aprovados\n5 - Listar reprovados\n6 - Listar alunos e dados\n7 - Listar alunos com nota acima de...\n0 - Sair");
+		scanf(" %d", &option);
+	
+		switch(option){
 			case 1:
 				if(arquivo) {
 					printf("Arquivo já criado");
@@ -89,7 +90,7 @@ void main(){
 			break;
 			case 2:
 				if(check == 0) {
-					printf("Arquivo ainda não criado, vá para opcao 1");
+					printf("\nArquivo ainda não criado, vá para opcao 1\n");
 					break;
 				}
 				
@@ -127,7 +128,7 @@ void main(){
 				}
 			break;	
 		}
-	}while(!opt);
+	}while(option != 0);
 	
 
 	fclose(arquivo);
